@@ -6,11 +6,12 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/07 18:46:34 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/11 21:06:25 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "../libft.h"
+#include "../get_next_line.h"
 #include <stdio.h>
 #include <xlocale.h>
 #include <ctype.h>
@@ -163,7 +164,7 @@ int				main(int ac, char **av)
 		ft_putnbr(memcmp("abab", "abab", 6));
 		ft_putchar('\n');
 		ft_putnbr(ft_memcmp("abab", "abab", 6));
-	}
+/*	}
 	else if (strcmp(av[1], "range") == 0)
 	{
 		int	*tab;
@@ -176,7 +177,7 @@ int				main(int ac, char **av)
 		{
 			ft_putnbr(tab[i++]);
 			printf("\n");
-		}
+		}*/
 	}
 	else if (strcmp(av[1], "strlen") == 0)
 	{
@@ -440,6 +441,31 @@ int				main(int ac, char **av)
 		ft_putendl(av[2]);
 	else if (strcmp(av[1], "putnbr") == 0)
 		ft_putnbr(ft_atoi(av[2]));
+	else if (ft_strcmp(av[1], "base") == 0)
+	{
+		ft_putstr("PUTNBR BASE : ");
+		ft_putnbr_base(atoi(av[2]), atoi(av[3]), BASEUP);
+		ft_putchar('\n');
+		ft_putstr("PUTNBR BASE : ");
+		ft_putnbr_base(atoi(av[2]), atoi(av[3]), BASELW);
+	}
+	else if (ft_strcmp(av[1], "putaddr") == 0)
+	{
+		char	*coucou = "hello";
+		int		bim = 543;
+		
+		ft_putaddr(coucou);
+		ft_putaddr(&bim);
+	}
+	else if (ft_strcmp(av[1], "printf") == 0)
+	{
+		int number = 54;
+
+		printf(" %+10d \n", number);
+		printf(" %0d \n", number);
+		printf(" %10x \n", number);
+		printf(" %x \n", number);
+	}
 	else if (strcmp(av[1], "fd") == 0)
 	{
 		int	fd;
