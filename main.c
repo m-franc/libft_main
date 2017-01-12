@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/11 21:06:25 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/12 20:44:57 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <xlocale.h>
 #include <ctype.h>
 #include <fcntl.h>
+#include <inttypes.h>
 
 void	del(void *element, size_t content_size)
 {
@@ -147,8 +148,8 @@ int				main(int ac, char **av)
 		char str2[] = "efer";
 		char str3[] = "rftenoyyrwhnyrw";
 		char str4[] = "rftenoyyrwhnyrw";
-//		printf("%s\n", memmove(av[2], av[3], atoi(av[4])));
-//		printf("%s\n", ft_memmove(av[2], av[3], atoi(av[4])));
+		//		printf("%s\n", memmove(av[2], av[3], atoi(av[4])));
+		//		printf("%s\n", ft_memmove(av[2], av[3], atoi(av[4])));
 		ft_putendl(memmove(str1, str3, 4));
 		ft_putendl(ft_memmove(str2, str4, 4));
 	}
@@ -159,25 +160,25 @@ int				main(int ac, char **av)
 	}
 	else if (strcmp(av[1], "memcmp") == 0)
 	{
-//		printf("%d\n", memcmp(av[2], av[3], atoi(av[4])));
-//		printf("%d\n", ft_memcmp(av[2], av[3], atoi(av[4])));
+		//		printf("%d\n", memcmp(av[2], av[3], atoi(av[4])));
+		//		printf("%d\n", ft_memcmp(av[2], av[3], atoi(av[4])));
 		ft_putnbr(memcmp("abab", "abab", 6));
 		ft_putchar('\n');
 		ft_putnbr(ft_memcmp("abab", "abab", 6));
-/*	}
-	else if (strcmp(av[1], "range") == 0)
-	{
-		int	*tab;
-		int	i;
+		/*	}
+			else if (strcmp(av[1], "range") == 0)
+			{
+			int	*tab;
+			int	i;
 
-		i = 0;
+			i = 0;
 
-		tab = ft_range(3, -5);
-		while (i <= 10)
-		{
+			tab = ft_range(3, -5);
+			while (i <= 10)
+			{
 			ft_putnbr(tab[i++]);
 			printf("\n");
-		}*/
+			}*/
 	}
 	else if (strcmp(av[1], "strlen") == 0)
 	{
@@ -235,7 +236,7 @@ int				main(int ac, char **av)
 		ft_bzero(buf2, 10);
 		ft_strcpy(buf2, "abc");
 
-			
+
 		ft_putnbr(strlcat(buf, "abcdefjiklmnop", 10));
 		printf("\n");
 		ft_putnbr(ft_strlcat(buf2, "abcdefjiklmnop", 10));
@@ -264,18 +265,18 @@ int				main(int ac, char **av)
 	{
 		char buf[] = "abcd";
 		char buf2[] = "abcd";
-	//	ft_putendl(strrchr(av[2], 'c'));
-	//	printf("\n");
-	//	ft_putendl(ft_strrchr(av[2], 'c'));
-	//	printf("\n");
-	//	ft_putendl(strrchr(av[3], 'A'));
-	//	printf("\n");
-	//	ft_putendl(ft_strrchr(av[3], 'A'));
-	//	printf("\n");
-//		ft_putendl(strrchr(av[4], 'p'));
-//		printf("\n");
-//		ft_putendl(ft_strrchr(av[4], 'p'));
-//		printf("\n");
+		//	ft_putendl(strrchr(av[2], 'c'));
+		//	printf("\n");
+		//	ft_putendl(ft_strrchr(av[2], 'c'));
+		//	printf("\n");
+		//	ft_putendl(strrchr(av[3], 'A'));
+		//	printf("\n");
+		//	ft_putendl(ft_strrchr(av[3], 'A'));
+		//	printf("\n");
+		//		ft_putendl(strrchr(av[4], 'p'));
+		//		printf("\n");
+		//		ft_putendl(ft_strrchr(av[4], 'p'));
+		//		printf("\n");
 		ft_putendl(strrchr(buf, 'a'));
 		printf("\n");
 		ft_putendl(ft_strrchr(buf2, 'a'));
@@ -292,12 +293,12 @@ int				main(int ac, char **av)
 	}
 	else if (strcmp(av[1], "strcmp") == 0)
 	{
-	//	char *str = NULL;
-	//	char* str2 = NULL;
-		
-//		ft_putnbr(strcmp(av[2], av[3]));
-//		ft_putnbr(ft_strcmp(av[2], av[3]));
-//		ft_putnbr(strcmp(str, str2));
+		//	char *str = NULL;
+		//	char* str2 = NULL;
+
+		//		ft_putnbr(strcmp(av[2], av[3]));
+		//		ft_putnbr(ft_strcmp(av[2], av[3]));
+		//		ft_putnbr(strcmp(str, str2));
 		ft_putnbr(strncmp("dfghn", "df", 1));
 		printf("\n");
 		ft_putnbr(ft_strncmp("dfghn", "df", 1));
@@ -320,8 +321,8 @@ int				main(int ac, char **av)
 	}
 	else if (strcmp(av[1], "atoi") == 0)
 	{
-//		printf("%d\n", atoi(av[2]));
-//		printf("%d\n", ft_atoi(av[2]));
+		//		printf("%d\n", atoi(av[2]));
+		//		printf("%d\n", ft_atoi(av[2]));
 		ft_putnbr(atoi("\200123"));
 		ft_putchar('\n');
 		ft_putnbr(ft_atoi("\200123"));
@@ -451,20 +452,30 @@ int				main(int ac, char **av)
 	}
 	else if (ft_strcmp(av[1], "putaddr") == 0)
 	{
-		char	*coucou = "hello";
-		int		bim = 543;
-		
-		ft_putaddr(coucou);
-		ft_putaddr(&bim);
+		char *bonjour = "HELLOCAVSJKODFLEKHUWFC gregt";
+		//		printf("%lu\n", sizeof(void));
+		//		printf("%lu\n", sizeof(char));
+		//		printf("%lu\n", sizeof(int));
+
+		ft_putstr("Adresse de yo ");
+		ft_putaddr(&bonjour);
+		ft_putchar('\n');
+		printf("adresse de yo %p\n", &bonjour);
+//		ft_putstr("test de itoabse pour loption x/X : ");
+	//	ft_putendl(ft_itoa_base(bonj, 16, BASELW));
+	//	printf("valeur en exa de yo %#x\n", (void*)bonjour);
 	}
 	else if (ft_strcmp(av[1], "printf") == 0)
 	{
-		int number = 54;
+		printf("======= PREMIER TESTS DE FLAGS =========\n\n");
+		int number = 512345678;
 
 		printf(" %+10d \n", number);
 		printf(" %0d \n", number);
 		printf(" %10x \n", number);
 		printf(" %x \n", number);
+
+		printf("\n\n======= TESTS BIG INT ET ADRESSAGE ======\n\n");
 	}
 	else if (strcmp(av[1], "fd") == 0)
 	{
@@ -481,10 +492,10 @@ int				main(int ac, char **av)
 		t_list	*ma2;
 		t_list	*ma3;
 		t_list	*ma4;
-//		t_list	*ma5;
-//		t_list	*ma6;
-//		t_list	*ma7;
-//		t_list	*ma8;
+		//		t_list	*ma5;
+		//		t_list	*ma6;
+		//		t_list	*ma7;
+		//		t_list	*ma8;
 
 		char *str1 = "coucou";
 		char *str2 = "bien";
@@ -511,22 +522,22 @@ int				main(int ac, char **av)
 		//	ft_putendl(ma3->content);
 		printf("===================== TEST DERNIER EXOS ET CORRECT ===================\n");
 
-//		ma5 = ft_lstmap(ma1, &f);
-//		ma6 = ft_lstmap(ma2, &f);
-//		ma7 = ft_lstmap(ma3, &f);
-//		ma8 = ft_lstmap(ma4, &f);
+		//		ma5 = ft_lstmap(ma1, &f);
+		//		ma6 = ft_lstmap(ma2, &f);
+		//		ma7 = ft_lstmap(ma3, &f);
+		//		ma8 = ft_lstmap(ma4, &f);
 
 		//		ft_lstdelone(&ma6, &del);
 		//		ft_lstdelone(&ma8, &del);
 
-//		ft_lstadd(&ma8, ma7);
-//		ft_lstadd(&ma7, ma6);
-//		ft_lstadd(&ma6, ma5);
+		//		ft_lstadd(&ma8, ma7);
+		//		ft_lstadd(&ma7, ma6);
+		//		ft_lstadd(&ma6, ma5);
 
-//		ft_putendl(ma5->content);
-//		ft_putendl(ma5->next->content);
-//		ft_putendl(ma5->next->next->content);
-//		ft_putendl(ma5->next->next->next->content);
+		//		ft_putendl(ma5->content);
+		//		ft_putendl(ma5->next->content);
+		//		ft_putendl(ma5->next->next->content);
+		//		ft_putendl(ma5->next->next->next->content);
 		t_list *l = ft_lstnew(ft_strdup(" 1 2 3 "), 8);
 		t_list *ret;
 		t_list *tmp;
@@ -535,7 +546,7 @@ int				main(int ac, char **av)
 
 		l->next = ft_lstnew(ft_strdup("ss"), 3);
 		l->next->next = ft_lstnew(strdup("-_-"), 4);
-	
+
 		ft_putendl(l->content);
 		ft_putendl(l->next->content);
 		ft_putendl(l->next->next->content);
@@ -543,7 +554,7 @@ int				main(int ac, char **av)
 		tmp = ft_lstmap(ret, &f);
 		ft_putchar('B');
 		printf("====================== TEST AVEC BUFFER DIFF ===========================\n");
-	
+
 		ft_putendl(ret->content);
 		ft_putendl(ret->next->content);
 		ft_putendl(ret->next->next->content);
