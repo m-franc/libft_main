@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/12 20:44:57 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/13 20:43:37 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -444,26 +444,33 @@ int				main(int ac, char **av)
 		ft_putnbr(ft_atoi(av[2]));
 	else if (ft_strcmp(av[1], "base") == 0)
 	{
+		size_t nb1 = 43;
 		ft_putstr("PUTNBR BASE : ");
-		ft_putnbr_base(atoi(av[2]), atoi(av[3]), BASEUP);
-		ft_putchar('\n');
-		ft_putstr("PUTNBR BASE : ");
-		ft_putnbr_base(atoi(av[2]), atoi(av[3]), BASELW);
+		ft_putnbr_base(nb1, atoi(av[2]), BASEUP);
 	}
 	else if (ft_strcmp(av[1], "putaddr") == 0)
 	{
-		char *bonjour = "HELLOCAVSJKODFLEKHUWFC gregt";
+//		char *bonjour = "HELLOCAVSJKODFLEKHUWFC gregt";
+		int number = 512345678;
 		//		printf("%lu\n", sizeof(void));
 		//		printf("%lu\n", sizeof(char));
 		//		printf("%lu\n", sizeof(int));
 
-		ft_putstr("Adresse de yo ");
-		ft_putaddr(&bonjour);
-		ft_putchar('\n');
-		printf("adresse de yo %p\n", &bonjour);
-//		ft_putstr("test de itoabse pour loption x/X : ");
-	//	ft_putendl(ft_itoa_base(bonj, 16, BASELW));
-	//	printf("valeur en exa de yo %#x\n", (void*)bonjour);
+		ft_putaddr(&number);
+		ENDL
+		printf("%p\n", &number);
+		ft_putstr("test de itoabse pour loption x/X : ");
+		ft_putendl(ft_itoa_base(number, 16, BASELW));
+		printf("valeur en exa de number %x\n", (unsigned int)number);
+	}
+	else if (ft_strcmp(av[1], "dftoa") == 0)
+	{
+		float	testf = 327;
+//		double	testd = 12.654;
+		
+		ft_putstr(ft_ftoa(testf));
+		ENDL
+		printf("%f\n", testf);
 	}
 	else if (ft_strcmp(av[1], "printf") == 0)
 	{
