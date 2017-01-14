@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/13 20:43:37 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/14 20:20:18 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -463,14 +463,29 @@ int				main(int ac, char **av)
 		ft_putendl(ft_itoa_base(number, 16, BASELW));
 		printf("valeur en exa de number %x\n", (unsigned int)number);
 	}
+	else if (ft_strcmp(av[1], "strspn") == 0)
+	{
+		PSTR("la vraie STRSPN: ")
+		PNBR(strspn(av[2], av[3]));
+		ENDL
+		PSTR("la mienne : ")
+		PNBR(ft_strspn(av[2], av[3]));
+		ENDL
+		ENDL
+		PSTR("la vraie STRCSPN: ")
+		PNBR(strcspn(av[2], av[3]));
+		ENDL
+		PSTR("la mienne : ")
+		PNBR(ft_strcspn(av[2], av[3]));
+	}
 	else if (ft_strcmp(av[1], "dftoa") == 0)
 	{
-		float	testf = 327;
-//		double	testd = 12.654;
+	//	float	testf = 327;
+		long double	testd = 1865.439875;
 		
-		ft_putstr(ft_ftoa(testf));
+		ft_putstr(ft_ftoa(testd));
 		ENDL
-		printf("%f\n", testf);
+		printf("%Lf\n", testd);
 	}
 	else if (ft_strcmp(av[1], "printf") == 0)
 	{
