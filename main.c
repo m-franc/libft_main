@@ -6,12 +6,12 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/14 20:20:18 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/16 21:24:25 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include "../get_next_line.h"
+#include "../Libft/includes/libft.h"
+#include "../Libft/includes/get_next_line.h"
 #include <stdio.h>
 #include <xlocale.h>
 #include <ctype.h>
@@ -47,7 +47,7 @@ t_list	*f(t_list *elem)
 
 //static void 	pri(unsigned int c, char s)
 //{
-//	ft_putnbr(c);
+//	ft_putint(c);
 //}
 
 //static char		o(unsigned int c, char d)
@@ -77,7 +77,7 @@ t_list	*f(t_list *elem)
 
 static char    	prix(unsigned int c, char s)
 {
-	ft_putnbr(c);
+	ft_putint(c, 10, BASEUP);
 	ft_putchar('\n');
 	s = 'A';
 	return (s);
@@ -141,7 +141,7 @@ int				main(int ac, char **av)
 		ft_putendl(ft_memccpy(av[2], av[3], '0', ft_atoi(av[4])));
 	}
 	else if (strcmp(av[1], "countword") == 0)
-		ft_putnbr(ft_countword(av[2]));
+		ft_putint(ft_countword(av[2]), 10, BASEUP);
 	else if (strcmp(av[1], "memmove") == 0)
 	{
 		char str1[] = "efer";
@@ -162,9 +162,9 @@ int				main(int ac, char **av)
 	{
 		//		printf("%d\n", memcmp(av[2], av[3], atoi(av[4])));
 		//		printf("%d\n", ft_memcmp(av[2], av[3], atoi(av[4])));
-		ft_putnbr(memcmp("abab", "abab", 6));
+		ft_putint(memcmp("abab", "abab", 6), 10, BASEUP);
 		ft_putchar('\n');
-		ft_putnbr(ft_memcmp("abab", "abab", 6));
+		ft_putint(ft_memcmp("abab", "abab", 6), 10, BASEUP);
 		/*	}
 			else if (strcmp(av[1], "range") == 0)
 			{
@@ -176,7 +176,7 @@ int				main(int ac, char **av)
 			tab = ft_range(3, -5);
 			while (i <= 10)
 			{
-			ft_putnbr(tab[i++]);
+			ft_putint(tab[i++]);
 			printf("\n");
 			}*/
 	}
@@ -187,10 +187,10 @@ int				main(int ac, char **av)
 		char *str = "coucou\0coucou";
 		while (str[i] != '\0')
 			i++;
-		ft_putnbr(i);
+		ft_putint(i, 10, BASEUP);
 		while (str[o])
 			o++;
-		ft_putnbr(o);
+		ft_putint(o, 10, BASEUP);
 	}
 	else if (strcmp(av[1], "strdup") == 0)
 	{
@@ -237,25 +237,25 @@ int				main(int ac, char **av)
 		ft_strcpy(buf2, "abc");
 
 
-		ft_putnbr(strlcat(buf, "abcdefjiklmnop", 10));
+		ft_putint(strlcat(buf, "abcdefjiklmnop", 10), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(ft_strlcat(buf2, "abcdefjiklmnop", 10));
+		ft_putint(ft_strlcat(buf2, "abcdefjiklmnop", 10), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(strlcat(buff1, str, max));
+		ft_putint(strlcat(buff1, str, max), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(ft_strlcat(buff2, str, max));
+		ft_putint(ft_strlcat(buff2, str, max), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(strlcat(s1 , "thx to ntoniolo for this test !", 4));
+		ft_putint(strlcat(s1 , "thx to ntoniolo for this test !", 4), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(ft_strlcat(s2, "thx to ntoniolo for this test !", 4));
+		ft_putint(ft_strlcat(s2, "thx to ntoniolo for this test !", 4), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(strlcat(av[2], av[3], ft_atoi(av[4])));
+		ft_putint(strlcat(av[2], av[3], ft_atoi(av[4])), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(ft_strlcat(av[2], av[3], ft_atoi(av[4])));
+		ft_putint(ft_strlcat(av[2], av[3], ft_atoi(av[4])), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(strlcat(buff3, str2, max2));
+		ft_putint(strlcat(buff3, str2, max2), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(ft_strlcat(buff4, str2, max2));
+		ft_putint(ft_strlcat(buff4, str2, max2), 10, BASEUP);
 	}
 	else if (strcmp(av[1], "strchr") == 0)
 	{
@@ -296,36 +296,36 @@ int				main(int ac, char **av)
 		//	char *str = NULL;
 		//	char* str2 = NULL;
 
-		//		ft_putnbr(strcmp(av[2], av[3]));
-		//		ft_putnbr(ft_strcmp(av[2], av[3]));
-		//		ft_putnbr(strcmp(str, str2));
-		ft_putnbr(strncmp("dfghn", "df", 1));
+		//		ft_putint(strcmp(av[2], av[3]));
+		//		ft_putint(ft_strcmp(av[2], av[3]));
+		//		ft_putint(strcmp(str, str2));
+		ft_putint(strncmp("dfghn", "df", 1), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(ft_strncmp("dfghn", "df", 1));
+		ft_putint(ft_strncmp("dfghn", "df", 1), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(strncmp("efwrgat", "grethw1", 12));
+		ft_putint(strncmp("efwrgat", "grethw1", 12), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(ft_strncmp("efwrgat", "grerhw1", 12));
+		ft_putint(ft_strncmp("efwrgat", "grerhw1", 12), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(strncmp("fgrth4jwy5r", "", 5));
+		ft_putint(strncmp("fgrth4jwy5r", "", 5), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(ft_strncmp("fgrth4jwy5r", "", 5));
+		ft_putint(ft_strncmp("fgrth4jwy5r", "", 5), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(strncmp("abc", "abcde", 3));
+		ft_putint(strncmp("abc", "abcde", 3), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(ft_strncmp("abc", "abcde", 3));
+		ft_putint(ft_strncmp("abc", "abcde", 3), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(strncmp(NULL, NULL, 10));
+		ft_putint(strncmp(NULL, NULL, 10), 10, BASEUP);
 		printf("\n");
-		ft_putnbr(ft_strncmp(NULL, NULL, 10));
+		ft_putint(ft_strncmp(NULL, NULL, 10), 10, BASEUP);
 	}
 	else if (strcmp(av[1], "atoi") == 0)
 	{
 		//		printf("%d\n", atoi(av[2]));
 		//		printf("%d\n", ft_atoi(av[2]));
-		ft_putnbr(atoi("\200123"));
+		ft_putint(atoi("\200123"), 10, BASEUP);
 		ft_putchar('\n');
-		ft_putnbr(ft_atoi("\200123"));
+		ft_putint(ft_atoi("\200123"), 10, BASEUP);
 	}
 	else if (strcmp(av[1], "is") == 0)
 	{
@@ -436,21 +436,26 @@ int				main(int ac, char **av)
 		ft_putstr(av[2]);
 	else if (strcmp(av[1], "strsplit") == 0)
 		ft_puttab(ft_strsplit(av[2], '4'));
-	else if (strcmp(av[1], "itoa") == 0)
-		ft_putstr(ft_itoa(ft_atoi(av[2])));
+	else if (strcmp(av[1], "uitoa") == 0)
+		ft_putstr(ft_itoa(ft_atoi(av[2]), ft_atoi(av[3]), BASELW));
 	else if (strcmp(av[1], "putendl") == 0)
 		ft_putendl(av[2]);
-	else if (strcmp(av[1], "putnbr") == 0)
-		ft_putnbr(ft_atoi(av[2]));
+	else if (strcmp(av[1], "putint") == 0)
+		ft_putint(ft_atoi(av[2]), 10, BASEUP);
 	else if (ft_strcmp(av[1], "base") == 0)
 	{
-		size_t nb1 = 43;
-		ft_putstr("PUTNBR BASE : ");
-		ft_putnbr_base(nb1, atoi(av[2]), BASEUP);
+		PSTR("ITOA : ")
+			PNBR(ft_atoi(av[2]), ft_atoi(av[3]), BASELW);
+		ENDL
+			printf("PRINTF L INT : %lld\n", ft_atoi(av[2]));
+		ENDL
+			PSTR("UITOA : ")
+			ft_putuint(ft_atoui(av[2]), ft_atoi(av[3]), BASELW);
+		ENDL
 	}
 	else if (ft_strcmp(av[1], "putaddr") == 0)
 	{
-//		char *bonjour = "HELLOCAVSJKODFLEKHUWFC gregt";
+		//		char *bonjour = "HELLOCAVSJKODFLEKHUWFC gregt";
 		int number = 512345678;
 		//		printf("%lu\n", sizeof(void));
 		//		printf("%lu\n", sizeof(char));
@@ -458,55 +463,77 @@ int				main(int ac, char **av)
 
 		ft_putaddr(&number);
 		ENDL
-		printf("%p\n", &number);
+			printf("%p\n", &number);
 		ft_putstr("test de itoabse pour loption x/X : ");
-		ft_putendl(ft_itoa_base(number, 16, BASELW));
+		ft_putendl(ft_itoa(number, 16, BASELW));
 		printf("valeur en exa de number %x\n", (unsigned int)number);
 	}
 	else if (ft_strcmp(av[1], "strspn") == 0)
 	{
 		PSTR("la vraie STRSPN: ")
-		PNBR(strspn(av[2], av[3]));
+			PNBR(strspn(av[2], av[3]), 10, BASEUP);
 		ENDL
-		PSTR("la mienne : ")
-		PNBR(ft_strspn(av[2], av[3]));
+			PSTR("la mienne : ")
+			PNBR(ft_strspn(av[2], av[3]), 10, BASEUP);
 		ENDL
+			ENDL
+			PSTR("la vraie STRCSPN: ")
+			PNBR(strcspn(av[2], av[3]), 10, BASEUP);
 		ENDL
-		PSTR("la vraie STRCSPN: ")
-		PNBR(strcspn(av[2], av[3]));
-		ENDL
-		PSTR("la mienne : ")
-		PNBR(ft_strcspn(av[2], av[3]));
+			PSTR("la mienne : ")
+			PNBR(ft_strcspn(av[2], av[3]), 10, BASEUP);
 	}
-	else if (ft_strcmp(av[1], "dftoa") == 0)
+	else if (ft_strcmp(av[1], "ftoa") == 0)
 	{
-	//	float	testf = 327;
-		long double	testd = 1865.439875;
-		
-		ft_putstr(ft_ftoa(testd));
+		//	float	testf = 327;
+		//		printf("SIZE OF DOUBLE : %lu\n", sizeof(double));
+		//		printf("SIZE OF LONG DOUBLE : %lu\n", sizeof(long double));
 		ENDL
+			long double	testd = 3.141592;
+
 		printf("%Lf\n", testd);
+		ENDL
+			ft_putstr(ft_ftoa(testd, 10, BASEUP));
 	}
 	else if (ft_strcmp(av[1], "printf") == 0)
-	{
-		printf("======= PREMIER TESTS DE FLAGS =========\n\n");
-		int number = 512345678;
-
-		printf(" %+10d \n", number);
-		printf(" %0d \n", number);
-		printf(" %10x \n", number);
-		printf(" %x \n", number);
-
-		printf("\n\n======= TESTS BIG INT ET ADRESSAGE ======\n\n");
-	}
+		{
+	//		printf("======= PREMIER TESTS DE FLAGS =========\n\n");
+	//		int number = 512345678;
+	//
+	//		printf(" %0d \n", number);
+	//		printf(" %10x \n", number);
+	//		printf(" %x \n", number);
+	//		printf(" %+10d \n\n", number);
+	//		printf("======= cas particulier #x / 0 =========\n\n");
+	//		printf("%#x\n", 0);
+	//		printf("%x\n", 42);
+	//
+	//		
+	//		printf("\n======= TESTS UNSIGNED LL ======\n\n");
+	//		unsigned long long o = 0;
+	//		printf("%llu\n", 0);
+	//		printf("\n======= TESTS INT ======\n\n");
+	//		printf("PRINTF INT MAX: %d\n", INTMAX);
+	//		printf("PRINTF INT MIN : %d\n", INTMIN);
+	//		printf("PRINTF UL MAX: %lu\n", ULMAX);
+	//		printf("PRINTF LL MAX : %lld\n", LLMAX);
+	//		printf("PRINTF LLU MAX : %llu\n", LLUIMAX);
+			printf("\n======= TEST PADDING ET * ======\n\n");
+			int number    =  5;
+			char *pointer = "little";
+	
+			printf("Here is a number-%4d-and a-%10s-word.\n", number, pointer);
+			
+			printf("---%*d----\n", 6, number);
+		}
 	else if (strcmp(av[1], "fd") == 0)
 	{
-		int	fd;
-		fd = open("coucou", O_RDWR);
-		ft_putchar_fd('c', fd);
-		ft_putendl_fd("sava", fd);
-		ft_putstr_fd("salut", fd);
-		ft_putnbr_fd(-2345, fd);
+		ft_putchar_fd('c', 1);
+		ft_putendl_fd("sava", 1);
+		ft_putstr_fd("salut", 1);
+		ft_putint_fd(-2345, 1, 10, BASEUP);
+		ft_putchar_fd('c', 1);
+		ft_putuint_fd(ft_atoui(av[2]), 1, 10, BASEUP);
 	}
 	else if (strcmp(av[1], "bonus") == 0)
 	{

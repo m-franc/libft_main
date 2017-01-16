@@ -2,29 +2,35 @@ NAME = libft_test
 
 FLAGS = -Wall -Wextra -Werror -fsanitize=address
 
+##FLAGS = -fsanitize=address
+
 CC = gcc $(FLAGS)
 
-LIBFT = libft
+PATH_LIB = ../Libft/
 
-PATH_LIB = ../$(LIBFT)/
+LIBFT = $(PATH_LIB)libft.a
 
 SRCS = main.c
 
 OBJS = main.o
 
-LIBFT_MAKE = make -C $(PATH_LIB)
-
 all: $(NAME)
 
-$(NAME): $(LIBFT_MAKE)
-	$(CC) -o $@ $(SRCS)
+$(LIBFT): 
+	@make -C $(PATH_LIB)
+
+$(NAME): $(LIBFT) $(OBJS)
+	$(CC) $^ -o $@
+
+%.o: %.c
+	$(CC) -c $< -o $@ -I $(PATH_LIB)
 
 clean:
+	@make clean -C $(PATH_LIB)
 	rm -f $(OBJS)
-	make clean -C $(LIBFT)
 
-flcean: clean:
+fclean: clean
+	@make fclean -C $(PATH_LIB)
 	rm -f $(OBJS)
-	make fclean -C $(LIBFT)
 
 re: fclean all
