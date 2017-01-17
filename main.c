@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/16 21:24:25 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/17 19:26:38 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -489,9 +489,10 @@ int				main(int ac, char **av)
 		//		printf("SIZE OF DOUBLE : %lu\n", sizeof(double));
 		//		printf("SIZE OF LONG DOUBLE : %lu\n", sizeof(long double));
 		ENDL
-			long double	testd = 3.141592;
+		long double	testd = 0.4;
 
 		printf("%Lf\n", testd);
+		printf("%f\n", 4.4);
 		ENDL
 			ft_putstr(ft_ftoa(testd, 10, BASEUP));
 	}
@@ -525,6 +526,10 @@ int				main(int ac, char **av)
 			printf("Here is a number-%4d-and a-%10s-word.\n", number, pointer);
 			
 			printf("---%*d----\n", 6, number);
+			printf("\n======= TEST DU FLAG # =======\n\n");
+			printf("%#o\n", 34);
+			printf("%u", 543);
+
 		}
 	else if (strcmp(av[1], "fd") == 0)
 	{
