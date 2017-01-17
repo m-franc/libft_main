@@ -1,14 +1,26 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mfranc <marvin@42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/01/17 21:08:17 by mfranc            #+#    #+#              #
+#    Updated: 2017/01/17 21:08:18 by mfranc           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft_test
 
-FLAGS = -Wall -Wextra -Werror -fsanitize=address
+FLAGS = -fsanitize=address
 
-##FLAGS = -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 CC = gcc $(FLAGS)
 
 PATH_LIB = ../Libft/
 
-LIBFT = $(PATH_LIB)libft.a
+LIBFT = $(PATH_LIB)libftprintf.a
 
 SRCS = main.c
 
@@ -31,6 +43,6 @@ clean:
 
 fclean: clean
 	@make fclean -C $(PATH_LIB)
-	rm -f $(OBJS)
+	rm -f $(NAME)
 
 re: fclean all

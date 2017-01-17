@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/17 19:26:38 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/17 20:55:06 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -489,7 +489,7 @@ int				main(int ac, char **av)
 		//		printf("SIZE OF DOUBLE : %lu\n", sizeof(double));
 		//		printf("SIZE OF LONG DOUBLE : %lu\n", sizeof(long double));
 		ENDL
-		long double	testd = 0.4;
+			long double	testd = 0.4;
 
 		printf("%Lf\n", testd);
 		printf("%f\n", 4.4);
@@ -497,40 +497,40 @@ int				main(int ac, char **av)
 			ft_putstr(ft_ftoa(testd, 10, BASEUP));
 	}
 	else if (ft_strcmp(av[1], "printf") == 0)
-		{
-	//		printf("======= PREMIER TESTS DE FLAGS =========\n\n");
-	//		int number = 512345678;
-	//
-	//		printf(" %0d \n", number);
-	//		printf(" %10x \n", number);
-	//		printf(" %x \n", number);
-	//		printf(" %+10d \n\n", number);
-	//		printf("======= cas particulier #x / 0 =========\n\n");
-	//		printf("%#x\n", 0);
-	//		printf("%x\n", 42);
-	//
-	//		
-	//		printf("\n======= TESTS UNSIGNED LL ======\n\n");
-	//		unsigned long long o = 0;
-	//		printf("%llu\n", 0);
-	//		printf("\n======= TESTS INT ======\n\n");
-	//		printf("PRINTF INT MAX: %d\n", INTMAX);
-	//		printf("PRINTF INT MIN : %d\n", INTMIN);
-	//		printf("PRINTF UL MAX: %lu\n", ULMAX);
-	//		printf("PRINTF LL MAX : %lld\n", LLMAX);
-	//		printf("PRINTF LLU MAX : %llu\n", LLUIMAX);
-			printf("\n======= TEST PADDING ET * ======\n\n");
-			int number    =  5;
-			char *pointer = "little";
-	
-			printf("Here is a number-%4d-and a-%10s-word.\n", number, pointer);
-			
-			printf("---%*d----\n", 6, number);
-			printf("\n======= TEST DU FLAG # =======\n\n");
-			printf("%#o\n", 34);
-			printf("%u", 543);
+	{
+		printf("======= PREMIER TESTS DE FLAGS =========\n\n");
+		int number = 512345678;
+		
+		printf(" %0d \n", number);
+				printf(" %10x \n", number);
+				printf(" %x \n", number);
+				printf(" %+10d \n\n", number);
+				printf("======= cas particulier #x / 0 =========\n\n");
+				printf("%#x\n", 0);
+				printf("%x\n", 42);
+		
+				
+				printf("\n======= TESTS UNSIGNED LL ======\n\n");
+				unsigned long long o = 0;
+				printf("%llu\n", 0);
+				printf("\n======= TESTS INT ======\n\n");
+				printf("PRINTF INT MAX: %d\n", INTMAX);
+				printf("PRINTF INT MIN : %d\n", INTMIN);
+				printf("PRINTF UL MAX: %lu\n", ULMAX);
+				printf("PRINTF LL MAX : %lld\n", LLMAX);
+				printf("PRINTF LLU MAX : %llu\n", LLUIMAX);
+		printf("\n======= TEST PADDING ET * ======\n\n");
+		int number    =  5;
+		char *pointer = "little";
 
-		}
+		printf("Here is a number-%4d-and a-%10s-word.\n", number, pointer);
+
+		printf("---%*d----\n", 6, number);
+		printf("\n======= TEST DU FLAG # =======\n\n");
+		printf("%#o\n", 34);
+		printf("%u", 543);
+
+	}
 	else if (strcmp(av[1], "fd") == 0)
 	{
 		ft_putchar_fd('c', 1);
