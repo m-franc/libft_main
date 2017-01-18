@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/17 20:55:06 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/18 19:46:28 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -439,9 +439,14 @@ int				main(int ac, char **av)
 	else if (strcmp(av[1], "uitoa") == 0)
 		ft_putstr(ft_itoa(ft_atoi(av[2]), ft_atoi(av[3]), BASELW));
 	else if (strcmp(av[1], "putendl") == 0)
-		ft_putendl(av[2]);
+	{
+		ft_putendl_fd(av[2], -3);
+	}
 	else if (strcmp(av[1], "putint") == 0)
-		ft_putint(ft_atoi(av[2]), 10, BASEUP);
+	{	
+		ft_putint(ft_atoi(av[2]), atoi(av[3]), BASEUP);
+		ENDL
+	}
 	else if (ft_strcmp(av[1], "base") == 0)
 	{
 		PSTR("ITOA : ")
@@ -453,20 +458,28 @@ int				main(int ac, char **av)
 			ft_putuint(ft_atoui(av[2]), ft_atoi(av[3]), BASELW);
 		ENDL
 	}
+	else if (ft_strcmp(av[1], "putchar") == 0)
+	{
+		write(1, NULL, 1);
+		ft_putchar_fd('c', -3);
+	}
+	else if (ft_strcmp(av[1], "strlenn") == 0)
+		ft_putint(ft_strlen(NULL), 10, BASEUP);
+	else if (ft_strcmp(av[1], "putstrfd") == 0)
+	{
+		printf("REUSSI A 100%%%%%%");
+	}
 	else if (ft_strcmp(av[1], "putaddr") == 0)
 	{
 		//		char *bonjour = "HELLOCAVSJKODFLEKHUWFC gregt";
-		int number = 512345678;
+		char	*number = "bionejrhkgef";
 		//		printf("%lu\n", sizeof(void));
 		//		printf("%lu\n", sizeof(char));
 		//		printf("%lu\n", sizeof(int));
 
-		ft_putaddr(&number);
+		ft_putaddr(NULL);
 		ENDL
-			printf("%p\n", &number);
-		ft_putstr("test de itoabse pour loption x/X : ");
-		ft_putendl(ft_itoa(number, 16, BASELW));
-		printf("valeur en exa de number %x\n", (unsigned int)number);
+		printf("%p\n", &number);
 	}
 	else if (ft_strcmp(av[1], "strspn") == 0)
 	{
@@ -496,40 +509,11 @@ int				main(int ac, char **av)
 		ENDL
 			ft_putstr(ft_ftoa(testd, 10, BASEUP));
 	}
-	else if (ft_strcmp(av[1], "printf") == 0)
+	else if (ft_strcmp("putnstr", av[1]) == 0)
 	{
-		printf("======= PREMIER TESTS DE FLAGS =========\n\n");
-		int number = 512345678;
-		
-		printf(" %0d \n", number);
-				printf(" %10x \n", number);
-				printf(" %x \n", number);
-				printf(" %+10d \n\n", number);
-				printf("======= cas particulier #x / 0 =========\n\n");
-				printf("%#x\n", 0);
-				printf("%x\n", 42);
-		
-				
-				printf("\n======= TESTS UNSIGNED LL ======\n\n");
-				unsigned long long o = 0;
-				printf("%llu\n", 0);
-				printf("\n======= TESTS INT ======\n\n");
-				printf("PRINTF INT MAX: %d\n", INTMAX);
-				printf("PRINTF INT MIN : %d\n", INTMIN);
-				printf("PRINTF UL MAX: %lu\n", ULMAX);
-				printf("PRINTF LL MAX : %lld\n", LLMAX);
-				printf("PRINTF LLU MAX : %llu\n", LLUIMAX);
-		printf("\n======= TEST PADDING ET * ======\n\n");
-		int number    =  5;
-		char *pointer = "little";
-
-		printf("Here is a number-%4d-and a-%10s-word.\n", number, pointer);
-
-		printf("---%*d----\n", 6, number);
-		printf("\n======= TEST DU FLAG # =======\n\n");
-		printf("%#o\n", 34);
-		printf("%u", 543);
-
+		ft_putnstr(av[2], ft_atoi(av[3]));
+		ENDL
+		ft_putnstr(NULL, ft_atoi(av[3]));
 	}
 	else if (strcmp(av[1], "fd") == 0)
 	{
