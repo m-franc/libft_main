@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/18 19:46:28 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/22 19:51:44 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -447,16 +447,25 @@ int				main(int ac, char **av)
 		ft_putint(ft_atoi(av[2]), atoi(av[3]), BASEUP);
 		ENDL
 	}
+	else if (ft_strcmp(av[1], "power") == 0)
+	{
+		printf("%lld\n", ft_power(ft_atoi(av[2]), ft_atoi(av[3])));
+	}
 	else if (ft_strcmp(av[1], "base") == 0)
 	{
-		PSTR("ITOA : ")
-			PNBR(ft_atoi(av[2]), ft_atoi(av[3]), BASELW);
+	//	PSTR("ITOA : ")
+//			PNBR(ft_atoi(av[2]), ft_atoi(av[3]), BASELW);
+//		ENDL
+//			printf("PRINTF L INT : %lld\n", ft_atoi(av[2]));
+//		ENDL
+//			PSTR("UITOA : ")
+//			ft_putuint(ft_atoui(av[2]), ft_atoi(av[3]), BASELW);
+//		ENDL
+		PSTR("CONV BASE TESTING : ")
 		ENDL
-			printf("PRINTF L INT : %lld\n", ft_atoi(av[2]));
 		ENDL
-			PSTR("UITOA : ")
-			ft_putuint(ft_atoui(av[2]), ft_atoi(av[3]), BASELW);
-		ENDL
+//		char	*toconv = ft_itoa(453, 8, BASEUP);
+		PSTR(ft_convbase("0", 8, 16,  BASEUP));
 	}
 	else if (ft_strcmp(av[1], "putchar") == 0)
 	{
