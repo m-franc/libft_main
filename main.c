@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/22 19:51:44 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/24 21:08:19 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -472,6 +472,31 @@ int				main(int ac, char **av)
 		write(1, NULL, 1);
 		ft_putchar_fd('c', -3);
 	}
+	else if (ft_strcmp(av[1], "putbits") == 0)
+	{
+		ft_putbits('A');
+	}
+	else if (ft_strcmp(av[1], "unicode") == 0)
+	{
+		int i = 0;
+		char *s = "ABCDEF";
+		while (s[i])
+		{
+			PSTR(ft_itoa(s[i], 2, BASEUP))
+			ENDL
+			i++;
+		}
+		printf("Taille dun wint_t : %lu", sizeof(wint_t));
+		ENDL
+		ft_putwchar(L'正');
+		ENDL
+		ft_putwchar(L'é');
+		ENDL
+		ft_putwchar(L'и');
+		ENDL
+		ft_putwchar(L'Ω');
+		ENDL
+	}
 	else if (ft_strcmp(av[1], "strlenn") == 0)
 		ft_putint(ft_strlen(NULL), 10, BASEUP);
 	else if (ft_strcmp(av[1], "putstrfd") == 0)
@@ -481,14 +506,14 @@ int				main(int ac, char **av)
 	else if (ft_strcmp(av[1], "putaddr") == 0)
 	{
 		//		char *bonjour = "HELLOCAVSJKODFLEKHUWFC gregt";
-		char	*number = "bionejrhkgef";
+		char	*str = "coucou";
 		//		printf("%lu\n", sizeof(void));
 		//		printf("%lu\n", sizeof(char));
 		//		printf("%lu\n", sizeof(int));
 
-		ft_putaddr(NULL);
+		ft_putaddr(&str);
 		ENDL
-		printf("%p\n", &number);
+		printf("%p\n", &str);
 	}
 	else if (ft_strcmp(av[1], "strspn") == 0)
 	{
