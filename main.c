@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/24 21:08:19 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/27 18:27:04 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	del(void *element, size_t content_size)
 	element = NULL;
 	content_size = 0;
 }
-
-
 //void	f(t_list *elem)
 //{
 //	int	i;
@@ -85,6 +83,7 @@ static char    	prix(unsigned int c, char s)
 
 int				main(int ac, char **av)
 {
+	setlocale(LC_ALL, "");
 	if (ac <= 1)
 		return (0);
 	if (strcmp(av[1], "memset") == 0)
@@ -472,29 +471,54 @@ int				main(int ac, char **av)
 		write(1, NULL, 1);
 		ft_putchar_fd('c', -3);
 	}
+	else if (ft_strcmp(av[1], "strrev") == 0)
+	{
+		PSTR(ft_strrev(av[2]));
+	}
 	else if (ft_strcmp(av[1], "putbits") == 0)
 	{
-		ft_putbits('A');
+//		int d = 1234567;
+//		int *w = &d;
+//		ft_putbits(w, sizeof(w));
+//		ENDL
+		wchar_t a = L'é';
+		ft_putbits(&a, sizeof(a));
+		ENDL
 	}
 	else if (ft_strcmp(av[1], "unicode") == 0)
 	{
-		int i = 0;
-		char *s = "ABCDEF";
-		while (s[i])
-		{
-			PSTR(ft_itoa(s[i], 2, BASEUP))
-			ENDL
-			i++;
-		}
-		printf("Taille dun wint_t : %lu", sizeof(wint_t));
+//		int i = 0;
+//		char *s = "ABCDEF";
+//		while (s[i])
+//		{
+//			PSTR(ft_itoa(s[i], 2, BASEUP))
+//			ENDL
+//			i++;
+//		}
+//		ft_putwchar(L'é');
+//		printf("Taille dun wint_t : %lu", sizeof(wint_t));
+//		ENDL
+//		ft_putwchar(L'正');
+//		ENDL
+//		ft_putwchar(L'é');
+//		ENDL
+//		ft_putwchar(L'и');
+//		ENDL
+//		ft_putwchar(l'ω');
+
+//		ENDL
+//		ENDL
+		wchar_t a = L'正';
+		wchar_t b = L'é';
+		wchar_t c = L'и';
+		wchar_t d = L'ω';
+		ft_putwchar(a);
 		ENDL
-		ft_putwchar(L'正');
+		ft_putwchar(b);
 		ENDL
-		ft_putwchar(L'é');
+		ft_putwchar(c);
 		ENDL
-		ft_putwchar(L'и');
-		ENDL
-		ft_putwchar(L'Ω');
+		ft_putwchar(d);
 		ENDL
 	}
 	else if (ft_strcmp(av[1], "strlenn") == 0)
