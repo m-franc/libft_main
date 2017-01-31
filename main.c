@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/27 18:27:04 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/01/31 20:25:39 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -464,7 +464,9 @@ int				main(int ac, char **av)
 		ENDL
 		ENDL
 //		char	*toconv = ft_itoa(453, 8, BASEUP);
-		PSTR(ft_convbase("0", 8, 16,  BASEUP));
+		PSTR(ft_convbase("10000", 16, 10,  BASEUP));
+		ENDL
+		PSTR(ft_convbase("10FFFF", 16, 10,  BASEUP));
 	}
 	else if (ft_strcmp(av[1], "putchar") == 0)
 	{
@@ -481,7 +483,7 @@ int				main(int ac, char **av)
 //		int *w = &d;
 //		ft_putbits(w, sizeof(w));
 //		ENDL
-		wchar_t a = L'é';
+		wchar_t a = L'Ş';
 		ft_putbits(&a, sizeof(a));
 		ENDL
 	}
@@ -508,19 +510,20 @@ int				main(int ac, char **av)
 
 //		ENDL
 //		ENDL
-		wchar_t a = L'正';
-		wchar_t b = L'é';
-		wchar_t c = L'и';
-		wchar_t d = L'ω';
-		ft_putwchar(a);
-		ENDL
-		ft_putwchar(b);
-		ENDL
-		ft_putwchar(c);
-		ENDL
-		ft_putwchar(d);
-		ENDL
+		wchar_t a = L'Ş';
+//		wchar_t b = L'é';
+//		wchar_t c = L'и';
+//		wchar_t d = L'ω';
+		ft_putendl(ft_wchartostr(a));
+//		ft_putwchar(b);
+//		ENDL
+//		ft_putwchar(c);
+//		ENDL
+//		ft_putwchar(d);
+//		ENDL
 	}
+	else if (ft_strcmp(av[1], "addchar") == 0)
+		ft_putendl(ft_straddchar("salut", '!'));
 	else if (ft_strcmp(av[1], "strlenn") == 0)
 		ft_putint(ft_strlen(NULL), 10, BASEUP);
 	else if (ft_strcmp(av[1], "putstrfd") == 0)
