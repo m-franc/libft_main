@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/01/31 20:25:39 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/02/01 16:19:30 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -483,8 +483,8 @@ int				main(int ac, char **av)
 //		int *w = &d;
 //		ft_putbits(w, sizeof(w));
 //		ENDL
-		wchar_t a = L'Ş';
-		ft_putbits(&a, sizeof(a));
+		char a = 'c';
+		PSTR(ft_vtob(&a, sizeof(a)))
 		ENDL
 	}
 	else if (ft_strcmp(av[1], "unicode") == 0)
@@ -508,9 +508,7 @@ int				main(int ac, char **av)
 //		ENDL
 //		ft_putwchar(l'ω');
 
-//		ENDL
-//		ENDL
-		wchar_t a = L'Ş';
+		wchar_t a = L'ሴ';
 //		wchar_t b = L'é';
 //		wchar_t c = L'и';
 //		wchar_t d = L'ω';
