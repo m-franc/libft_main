@@ -6,14 +6,14 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/02/02 19:59:06 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/02/03 20:29:38 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Libft/includes/libft.h"
 #include "../Libft/includes/get_next_line.h"
 #include <stdio.h>
-#include <xlocale.h>
+#include <locale.h>
 #include <ctype.h>
 #include <fcntl.h>
 #include <inttypes.h>
@@ -508,11 +508,12 @@ int				main(int ac, char **av)
 //		ENDL
 //		ft_putwchar(l'ω');
 
-		wchar_t a = L'ሴ';
+		wint_t a = L'💩';
+	//	int a = INTMAX;
 //		wchar_t b = L'é';
 //		wchar_t c = L'и';
 //		wchar_t d = L'ω';
-		ft_putendl(ft_wchartostr(a));
+		ft_putendl(ft_wctoa(a));
 //		ft_putwchar(b);
 //		ENDL
 //		ft_putwchar(c);
