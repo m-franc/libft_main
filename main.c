@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:14:49 by mfranc            #+#    #+#             */
-/*   Updated: 2017/02/03 20:29:38 by mfranc           ###   ########.fr       */
+/*   Updated: 2017/02/04 19:47:18 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -507,13 +507,18 @@ int				main(int ac, char **av)
 //		ft_putwchar(L'и');
 //		ENDL
 //		ft_putwchar(l'ω');
-
-		wint_t a = L'💩';
+	
+		wchar_t *a = L"💩💩";
 	//	int a = INTMAX;
 //		wchar_t b = L'é';
 //		wchar_t c = L'и';
-//		wchar_t d = L'ω';
-		ft_putendl(ft_wctoa(a));
+//		wchar_t do = L'ω';
+		
+		ft_putwendl_fd(a, 1);
+		ft_putptrendl_fd(a, 1);
+		ENDL
+		ft_putintendl_fd(32456, 1, 2, BASEUP);
+//		write(1, ft_wstrtoa(a), ft_wstrlen(a));
 //		ft_putwchar(b);
 //		ENDL
 //		ft_putwchar(c);
@@ -537,7 +542,7 @@ int				main(int ac, char **av)
 		//		printf("%lu\n", sizeof(char));
 		//		printf("%lu\n", sizeof(int));
 
-		ft_putaddr(&str);
+		ft_putptr(&str);
 		ENDL
 		printf("%p\n", &str);
 	}
@@ -580,9 +585,9 @@ int				main(int ac, char **av)
 		ft_putchar_fd('c', 1);
 		ft_putendl_fd("sava", 1);
 		ft_putstr_fd("salut", 1);
-		ft_putint_fd(-2345, 1, 10, BASEUP);
+		ft_putint_fd(2345, 1, 10, BASEUP);
 		ft_putchar_fd('c', 1);
-		ft_putuint_fd(ft_atoui(av[2]), 1, 10, BASEUP);
+		ft_putuintendl(ft_atoui(av[2]), 10, BASEUP);
 	}
 	else if (strcmp(av[1], "bonus") == 0)
 	{
